@@ -31,10 +31,13 @@ func handlePushEvent(c echo.Context) error {
 
 	if payload.Ref == "ref/heads/master" {
 		// deploy
+		log.Println("Deploying...")
 		go func() {
 			err := exec.Command("sh", "deploy.sh").Run()
 			if err != nil {
 				log.Printf("Error while executing deploy shell commands: %s\n", err)
+			} else {
+				log.Println("Deploy complete")
 			}
 		}()
 	}
