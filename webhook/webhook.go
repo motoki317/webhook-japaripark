@@ -29,7 +29,7 @@ func handlePushEvent(c echo.Context) error {
 		return err
 	}
 
-	if payload.Ref == "ref/heads/master" {
+	if payload.Ref == "refs/heads/master" {
 		// deploy
 		log.Println("Deploying...")
 		go func() {
