@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /srv || exit
+cd /srv/japaripark || exit
 yarn
 yarn build
 sudo systemctl restart japaripark
